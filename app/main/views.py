@@ -22,7 +22,7 @@ def index():
     if search_movie:
         return redirect(url_for('search',movie_name=search_movie))
     else:
-        return render_template('index.html', title = title, popular = popular_movies, upcoming = upcoming_movie, now_showing = now_showing_movie )
+        return render_template('index.html', title = title, upcoming = upcoming_movie, popular=popular_movies, now_showing = now_showing_movie )
 @main.route('/search/<movie_name>')
 def search(movie_name):
     '''
