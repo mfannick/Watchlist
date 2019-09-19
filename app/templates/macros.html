@@ -1,5 +1,5 @@
 
-{% macro displayMovieList(movie_list) %}
+<!-- {% macro displayMovieList(movie_list) %}
 
     {% for movie in movie_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
@@ -12,7 +12,7 @@
 
     {% endfor %}
 
-{% endmacro %}
+{% endmacro %} -->
 <!-- Displaying reviews macro -->
 <!-- {% macro displayReviews(review_list) %}
     {% for review in review_list %}
@@ -22,3 +22,22 @@
     </div>
     {% endfor %}
 {% endmacro %} -->
+
+<!-- Displaying reviews macro -->
+{% macro displayReviews(review_list) %}
+
+    {% for review in review_list %}
+
+    <div class="row">
+
+      <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+        <h4>Author</h4>
+        <p>{{review.user.username}}</p>
+      </div>
+      <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8">
+        <h2> <a href="{{url_for('main.single_review',id=review.id)}}">{{review.movie_title}}</a> </h2>
+      </div>
+    </div>
+
+    {% endfor %}
+{% endmacro %}
